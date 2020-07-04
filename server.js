@@ -2,8 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const entryRouter = require('./routes/entryRouter');
-//import quotes
-//import user settings
+const quoteRouter = require('./routes/quoteRouter');
+//const userRouter = require('./routes/userRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -15,8 +15,14 @@ app.use(bodyParser.json());
 //entries
 app.use('/entries', entryRouter);
 app.use('/entries/:entryId', entryRouter);
+
 //quotes
-//user settings
+app.use('/quotes', quoteRouter);
+app.use('/quotes/:quoteId', quoteRouter);
+
+//user settings -- where all the info about user(s) is stored...?
+//app.use('/users', userRouter);
+//app.use('/users/:userId', userRouter);
 
 app.use(express.static(__dirname + '/public'));
 
