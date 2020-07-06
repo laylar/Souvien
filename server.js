@@ -12,17 +12,11 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-//entries
+//routers
 app.use('/entries', entryRouter);
-app.use('/entries/:entryId', entryRouter);
-
-//quotes
 app.use('/quotes', quoteRouter);
-app.use('/quotes/:quoteId', quoteRouter);
-
 //user settings -- where all the info about user(s) is stored...?
 //app.use('/users', userRouter);
-//app.use('/users/:userId', userRouter);
 
 app.use(express.static(__dirname + '/public'));
 
