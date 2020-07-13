@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
-    Jumbotron,
+    Navbar, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
 } from 'reactstrap';
 
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isNavOpen: false
+        };
+        this.toggleNav = this.toggleNav.bind(this);
     }
+
+    toggleNav() {
+        this.setState({
+            isNavOpen: !this.state.isNavOpen
+        });
+    }
+
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Jumbotron fluid>
                     <div className="container">
                         <div className="row">
@@ -24,22 +35,32 @@ class Header extends Component {
                         </div>
                     </div>
                 </Jumbotron>
-                <nav className="navbar navbar-expand-sm navbar-light sticky-top">
+                <Navbar dark sticky="top" expand="md">
                     <div className="container">
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#souvienmenu">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="souvienmenu">
-                            <ul className="navbar-nav">
-                                <li className="nav-item active"><a className="nav-link" href="#">Home</a></li>
-                                <li className="nav-item"><a className="nav-link" href="settings">Settings</a></li>
-                                <li className="nav-item"><a className="nav-link" href="about">About</a></li>
-                                <li className="nav-item"><a className="nav-link" href="contact">Contact</a></li>
-                            </ul>
-                        </div>
+                        <NavbarToggler onClick={this.toggleNav} />
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+
+                            <Nav navbar>
+                                <NavItem>
+                                    <NavLink className="nav-link" to="/home">
+                                        Home
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" to="/about">
+                                        About
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" to="/contact">
+                                        Contact
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                        </Collapse>
                     </div>
-                </nav>
-            </div>
+                </Navbar>
+            </React.Fragment>
         );
     }
 }
