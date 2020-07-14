@@ -1,5 +1,4 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function About() {
@@ -7,16 +6,12 @@ function About() {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>About</BreadcrumbItem>
-                    </Breadcrumb>
                     <hr />
                 </div>
             </div>
             <div className="row row-content">
                 <div>
-                    <h3>Our Mission</h3>
+                    <h3>About</h3>
                     <p><i>Ever wanted to know what you did a year ago? Two years ago?</i></p>
 
                     <p>Who were you and who will you become?</p>
