@@ -16,13 +16,9 @@ class Contact extends Component {
 
                     <p>Feel free to reach out!</p>
 
-                    <p>Built in 2020, an eventful year for the whole world, this is a journal application
-                    intended to help you build self-reflective practice around who you've been,
-                    what you've done, and who you'd like to see yourself become. With a sentence or two each day,
-                    or even just a word, you can effectively save a piece of each day of the year,
-                        like mini time-capsules for your future self to learn from.</p>
+                    <p>Lorem ipsum there will be a form here soon but I've got to take up a bunch of space here so the page looks a little fuller....</p>
 
-                    <p><i>What do you want to remember about today?</i></p>
+                    <button>This is where the submit button will go!</button>
                 </div>
             </div>
 
