@@ -25,18 +25,10 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <Jumbotron fluid>
+                <Navbar light sticky="top">
                     <div className="container">
-                        <div className="row">
-                            <div className="col center centered-text mx-auto header-title">
-                                <h1>Souvien</h1>
-                                <h2>Daily tidbits for future-self.</h2>
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
-                <Navbar dark sticky="top">
-                    <div className="container">
+                    <h1 className="white-text">Souvien</h1>
+                    <h3>Daily tidbits for future-self.</h3>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>

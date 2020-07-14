@@ -37,13 +37,15 @@
   }
 }
 
-.jumbotron {
-  margin: 0;
-  padding: 30px;
-  background: white;
+.navbar {
+  background-image: linear-gradient(to right, black, gray, white);
   color: black;
 }
 
-.navbar {
-  background-image: linear-gradient(to right, black, gray, white)
+.NavbarToggler {
+  color: black;
+}
+
+.white-text {
+  color: gray;
 }
