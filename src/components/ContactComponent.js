@@ -4,25 +4,25 @@ class Contact extends Component {
     render() {
         return (
             <div className="container">
-            <div className="row">
-                <div className="col">
-                    <hr />
+                <div className="row">
+                    <div className="col">
+                        <hr />
+                    </div>
                 </div>
-            </div>
-            <div className="row row-content">
-                <div>
-                    <h3>Contact</h3>
-                    <p><i>Have some ideas, comments, thoughts?</i></p>
+                <div className="row row-content">
+                    <div className="col">
+                        <h3>Contact</h3>
+                        <p><i>Have some ideas, comments, thoughts?</i></p>
 
-                    <p>Feel free to reach out!</p>
+                        <p>Feel free to reach out!</p>
 
-                    <p>Lorem ipsum there will be a form here soon but I've got to take up a bunch of space here so the page looks a little fuller....</p>
+                        <p>Lorem ipsum there will be a form here soon but I've got to take up a bunch of space here so the page looks a little fuller....</p>
 
-                    <button>This is where the submit button will go!</button>
+                        <button>This is where the submit button will go!</button>
+                    </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
         );
     };
 }
