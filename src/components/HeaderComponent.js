@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import {
-    Navbar, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
-} from 'reactstrap';
+import { Navbar, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 
 
 class Header extends Component {
@@ -27,8 +25,8 @@ class Header extends Component {
             <React.Fragment>
                 <Navbar light sticky="top">
                     <div className="container">
-                    <h1 className="white-text">Souvien</h1>
-                    <h3>Daily tidbits for future-self.</h3>
+                        <h1 className="white-text">Souvien</h1>
+                        <h3>Daily tidbits for future-self.</h3>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
