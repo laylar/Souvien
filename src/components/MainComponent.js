@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
-//import Footer from './FooterComponent';
+import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 //import Directory from './DirectoryComponent';
@@ -29,7 +29,7 @@ class Main extends Component {
                     <Route path='/contact' component={Contact} />
                     <Redirect to='/home' />
                 </Switch>
-
+                <Footer />
             </div>
         )
     }
