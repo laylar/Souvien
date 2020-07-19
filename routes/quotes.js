@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const Quote = require('../models/quote');
 
 const quoteRouter = express.Router();
 

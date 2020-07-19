@@ -1,7 +1,19 @@
 const mongoose = require('mongoose');
 //const passportLocalMongoose = require('passport-local-mongoose');
 const Schema = mongoose.Schema;
-const entry = require('../models/entry')
+
+const entrySchema = new Schema({
+    date: {
+        type: Date,
+        required: true
+    },
+    text: {
+        type: String,
+        required: true
+    }
+}, {
+        timestamps: true
+});
 
 const userSchema = new Schema({
     firstname: {
@@ -12,7 +24,7 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    entries: [entry]
+    entries: [entrySchema]
 });
 
 //planning to use Passport for user logins
