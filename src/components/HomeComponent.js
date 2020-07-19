@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Card, CardTitle, CardText, Form, FormGroup, Label, Input, Button} from 'reactstrap';
-import Calendar from 'react-calendar';
+import DatePicker from 'react-date-picker';
 
 class CurrDate extends Component {
 //More info here: https://www.npmjs.com/package/react-calendar
@@ -14,7 +14,7 @@ class CurrDate extends Component {
       render() {
         return (
           <div>
-            <Calendar
+            <DatePicker
               onChange={this.onChange}
               value={this.state.date}
             />
@@ -22,13 +22,34 @@ class CurrDate extends Component {
         );
       }
     }
+/* This is where I'll render the quote based on the date selected.
+    function RenderQuote({ quote }) {
+        return (
+            <Card>
+                <Link to={`/directory/${campsite.id}`}>
+                    <CardImg width="100%" src={baseUrl + campsite.image} alt={campsite.name} />
+                    <CardImgOverlay>
+                        <CardTitle>{campsite.name}</CardTitle>
+                    </CardImgOverlay>
+                </Link>
+            </Card>
+    
+        )
+    }
+*/
 
 function Home (props) {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-9">
+                <div className="col-md-12">
                     <Card>
+                        <Card>
+                            <CardTitle><h4><i>In order to write about life first you must live it.</i></h4></CardTitle>
+                            <CardText>- Ernest Hemingway</CardText>
+                        </Card>
+                        <hr />
+                        <CurrDate />
                         <Form>
                             <FormGroup>
                                 <Label for="entry-data"></Label>
@@ -38,10 +59,6 @@ function Home (props) {
                         </Form>
                     </Card>
                 </div>
-                <div className="col-md-3">
-                    <CurrDate />
-                </div>
-                
             </div>
             <div className="row row-content">
                 <div className="col">
