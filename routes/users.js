@@ -24,7 +24,7 @@ userRouter.get('/', (req, res, next) => {
 -actually add new user,
 -set up authentication*/
 userRouter.post('/signup', (req, res) => {
-  res.end(`Will add the user: ${req.body.name} with description: ${req.body.description}`);
+  res.end(`Will add the user: ${req.body.firstname}`);
 });
 
 userRouter.post('/login', (req, res) => {
