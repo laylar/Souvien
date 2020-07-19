@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchQuotes } from '../redux/ActionCreators';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
-//import Directory from './DirectoryComponent';
+
+
+const mapDispatchToProps = {
+    fetchQuotes: () => (fetchQuotes())
+};
+
+const mapStateToProps = state => {
+    return {
+        quotes: state.quotes
+    };
+};
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
+    componentDidMount() {
+        this.props.fetchQuotes();
     }
 
     render() {
         const HomePage = () => {
             return (
-                <Home />
+                <Home 
+                quote={this.props.quotes.quotes.filter(quote => quote)[0]}
+                quotesLoading={this.props.quotes.isLoading}
+                quotesErrMess={this.props.quotes.errMess}
+                />
             )
         }
 
@@ -35,4 +50,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
