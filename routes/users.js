@@ -73,3 +73,5 @@ userRouter.get('/:userId/entries/:entryId', (req, res) => {
     .delete((req, res) => {
         res.end(`Deleting entry: ${req.params.entryId}`);
     });
+
+module.exports = userRouter;
