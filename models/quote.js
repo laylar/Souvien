@@ -10,6 +10,10 @@ const quoteSchema = new Schema({
     text: {
         type: String,
         required: true
+    },
+    author: {
+        type: String,
+        required: true
     }
 });
 
