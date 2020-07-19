@@ -1,4 +1,4 @@
-[
+export const QUOTES =[
     {
       "Id": 0,
       "Date": "1/1",
