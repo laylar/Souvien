@@ -2,50 +2,72 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Quote = require('../models/quote');
 
-const quoteRouter = express.Router();
+const quotesRouter = express.Router();
 
-quoteRouter.use(bodyParser.json());
+quotesRouter.use(bodyParser.json());
 
-quoteRouter.route('/')
-    .all((req, res, next) => {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        next();
+quotesRouter.route('/')
+    .get((req, res, next) => {
+        Quote.find()
+        .then(quotes => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json')
+            res.json(quotes)
+        })
+        .catch(err => next(err))
     })
-    .get((req, res) => {
-        res.end('Will send all the quotes to you');
-    })
-    .post((req, res) => {
-        res.end(`Will add the quote: ${req.body.name} with description: ${req.body.description}`);
+    .post((req, res, next) => {
+        Quote.create(req.body)
+        .then(quote => {
+            console.log('Quote added: ', quote);
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json')
+            res.json(promotion);
+        })
+        .catch(err => next(err));
     })
     .put((req, res) => {
         res.statusCode = 403;
         res.end('PUT operation not supported on /quotes');
     })
-    .delete((req, res) => {
-        res.end('Deleting all quotes');
+    .delete((req, res, ) => {
+        Quote.deleteMany()
+        .then(response => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.json(response);
+        })
+        .catch(err => next(err));
     });
 
-quoteRouter.route('/:quoteId')
-    .all((req, res, next) => {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        next();
-    })
-    .get((req, res) => {
-        res.end(`Will send details of quote ${req.params.quoteId} to you`);
+quotesRouter.route('/:quoteId')
+    .get((req, res, next) => {
+        Quote.findById(req.params.quoteId)
+        .then(quote => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.json(quote);
+        })
+        .catch(err => next(err));
     })
     .post((req, res) => {
         res.statusCode = 403;
         res.end(`POST operation not supported on /quotes/${req.params.quoteId}`);
     })
-    .put((req, res) => {
-        res.write(`Updating the quote: ${req.params.quoteId}\n`);
-        res.end(`Will update the quote: ${req.body.name}
-        with description: ${req.body.description}`);
+    .put((req, res, next) => {
+        Quote.findByIdAndUpdate(req.params.quoteId, {
+            $set: req.body
+        }, {new: true})
+        .then(response => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.json(response);
+        })
+        .catch(err => next(err));
     })
     .delete((req, res) => {
-        res.end(`Deleting quote: ${req.params.quoteId}`);
+        res.statusCode = 403;
+        res.end(`DELETE operation not supported on /quotes/${req.params.quoteId}`);
     });
 
-module.exports = quoteRouter;
+module.exports = quotesRouter;

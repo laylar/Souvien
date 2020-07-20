@@ -7,7 +7,7 @@ const quoteSchema = new Schema({
         type: Date,
         required: true
     },
-    text: {
+    quote: {
         type: String,
         required: true
     },
