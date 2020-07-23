@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Card, CardTitle, CardText, Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import CurrDate from './CalendarComponent';
-
+import Quote from './QuoteComponent';
+import NewEntryForm from './NewEntryFormComponent';
 
 function Home (props) {
     return (
@@ -13,18 +14,9 @@ function Home (props) {
             </div>
             <div className="row">
                 <div className="col">
-                    <Card>
-                        <CardTitle><h4><i>In order to write about life first you must live it.</i></h4></CardTitle>
-                        <CardText>- Ernest Hemingway</CardText>
-                        <CurrDate />
-                        <Form>
-                            <FormGroup>
-                                <Label for="entry-data"></Label>
-                                <Input type="textarea" name="newentry" id="entry-data" />
-                            </FormGroup>
-                            <Button>Save The Day</Button>
-                        </Form>
-                    </Card>
+                    <Quote />
+                    <NewEntryForm />
+                    <CurrDate />
                 </div>
             </div>
             <div className="row row-content">
