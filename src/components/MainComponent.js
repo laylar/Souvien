@@ -44,6 +44,7 @@ class Main extends Component {
                     <Route path='/contact' component={Contact} />
                     <Redirect to='/home' />
                 </Switch>
+                <br /><br /><br /><br /><br />
                 <Footer />
             </div>
         )
