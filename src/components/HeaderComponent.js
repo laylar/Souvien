@@ -12,7 +12,7 @@ const Menu = (props) => {
 
     return(
         <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-            <DropdownToggle >
+            <DropdownToggle outline color="black">
                 <h3  className="header-text">----Souvien----</h3>
             </DropdownToggle>
             <DropdownMenu>

@@ -17,7 +17,7 @@ a:link {
 }
 
 .navbar {
-  background-image: linear-gradient(to right, black, rgb(182, 182, 182), gray);
+  background-image: linear-gradient(to right, rgb(54, 54, 54), rgb(182, 182, 182), gray);
   color: black;
 }
 
@@ -33,7 +33,7 @@ a:link {
 
 .header-title {
   font-family: 'Sue Ellen Francisco', cursive;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .header-text {
