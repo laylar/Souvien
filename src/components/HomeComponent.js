@@ -22,23 +22,23 @@ function Home (props) {
             <div className="row row-content">
                 <div className="col entry-text">
                     <br />
-                    <p>
-                        <b>When not logged in this page will show a login page.</b>
-                    </p>
+                    {/**When not logged in this page will show a login page.
+                    The section above this will be stuck to the top. The entries below can scroll.
+                    **/}
+                    <Card>
+                        <CardTitle tag="h5">July 19th, 2019</CardTitle>
+                        <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</CardText>
+                    </Card>
                     <br />
-                    <p><i>The section above this will be stuck to the top. The entries below can scroll.</i></p>
                     <Card>
-                        <CardTitle>Entry Date: July 19th, 2019</CardTitle>
+                        <CardTitle tag="h5">July 19th, 2018</CardTitle>
                         <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</CardText>
                     </Card>
+                    <br />
                     <Card>
-                        <CardTitle>Entry Date: July 19th, 2018</CardTitle>
-                        <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</CardText>
-                    </Card>
-                    <Card>
-                        <CardTitle>Entry Date: July 19th, 2017</CardTitle>
+                        <CardTitle tag="h5">July 19th, 2017</CardTitle>
                         <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</CardText>
                     </Card>
