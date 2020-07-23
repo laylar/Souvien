@@ -40,7 +40,14 @@ a:link {
   font-family: 'Sue Ellen Francisco', cursive;
   font-size: 60px;
 }
+
 .footer-text {
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-size: 30px;
+  color: black;
+}
+
+.title-text {
   font-family: 'Sue Ellen Francisco', cursive;
   font-size: 30px;
 }
