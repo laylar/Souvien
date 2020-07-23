@@ -42,12 +42,17 @@ function Home (props) {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-12">
+                <div className="col">
+                    <hr />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
                     <Card>
-                        <Card>
+                        
                             <CardTitle><h4><i>In order to write about life first you must live it.</i></h4></CardTitle>
                             <CardText>- Ernest Hemingway</CardText>
-                        </Card>
+                        
                         <hr />
                         <CurrDate />
                         <Form>
@@ -61,7 +66,7 @@ function Home (props) {
                 </div>
             </div>
             <div className="row row-content">
-                <div className="col">
+                <div className="col entry-text">
                     <p>
                         <b>When not logged in this page will show a login page.</b>
                     </p>

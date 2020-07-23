@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function About() {
     return (
@@ -9,7 +8,7 @@ function About() {
                     <hr />
                 </div>
             </div>
-            <div className="row row-content">
+            <div className="row">
                 <div>
                     <h3>About</h3>
                     <p><i>Ever wanted to know what you did a year ago? Two years ago?</i></p>

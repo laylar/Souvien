@@ -9,7 +9,7 @@ function Footer(props) {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <h4>
+                            <h4 className="footer-text">
                                 <Link to='/home' style={{ color: 'black' }}>{'     '} Home {'     '}</Link>
                                 <Link to='/about' style={{ color: 'black' }}>{'     '} About {'     '}</Link>
                                 <Link to='/contact' style={{ color: 'black' }}>{'     '} Contact {'     '}</Link>

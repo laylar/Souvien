@@ -38,9 +38,18 @@ a:link {
 
 .header-text {
   font-family: 'Sue Ellen Francisco', cursive;
+  font-size: 60px;
+}
+.footer-text {
+  font-family: 'Sue Ellen Francisco', cursive;
   font-size: 30px;
 }
 
 .entry-text {
   font-family: 'Montserrat', sans-serif;
+  
+}
+
+.dropdown.open a:focus {
+  background-color: #6dbcc9;
 }
