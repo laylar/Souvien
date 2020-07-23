@@ -1,42 +1,7 @@
 import React, {Component} from 'react';
 import {Card, CardTitle, CardText, Form, FormGroup, Label, Input, Button} from 'reactstrap';
-import DatePicker from 'react-date-picker';
+import CurrDate from './CalendarComponent';
 
-class CurrDate extends Component {
-//More info here: https://www.npmjs.com/package/react-calendar
-//Examples here: https://github.com/wojtekmaj/react-calendar/wiki/Recipes
-    state = {
-        date: new Date(),
-      }
-     
-      onChange = date => this.setState({ date })
-     
-      render() {
-        return (
-          <div>
-            <DatePicker
-              onChange={this.onChange}
-              value={this.state.date}
-            />
-          </div>
-        );
-      }
-    }
-/* This is where I'll render the quote based on the date selected.
-    function RenderQuote({ quote }) {
-        return (
-            <Card>
-                <Link to={`/directory/${campsite.id}`}>
-                    <CardImg width="100%" src={baseUrl + campsite.image} alt={campsite.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{campsite.name}</CardTitle>
-                    </CardImgOverlay>
-                </Link>
-            </Card>
-    
-        )
-    }
-*/
 
 function Home (props) {
     return (
