@@ -12,7 +12,7 @@ class CurrDate extends Component {
         
         render() {
         return (
-            <div classname="container">
+            <div className="container">
                 <br />
             <DatePicker
                 onChange={this.onChange}

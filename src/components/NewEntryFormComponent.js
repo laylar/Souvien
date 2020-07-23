@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
 function NewEntryForm() {
     return (
-        <div classname="container">
+        <div className="container">
             <div className="row">
                 <div className="col-md-8 centered">
                     <Form>

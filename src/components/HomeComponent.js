@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Card, CardTitle, CardText, Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import React from 'react';
+import {Card, CardTitle, CardText } from 'reactstrap';
 import CurrDate from './CalendarComponent';
 import Quote from './QuoteComponent';
 import NewEntryForm from './NewEntryFormComponent';

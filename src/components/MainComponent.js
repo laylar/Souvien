@@ -12,26 +12,22 @@ import About from './AboutComponent';
 const mapDispatchToProps = {
     fetchQuotes: () => (fetchQuotes())
 };
-
 const mapStateToProps = state => {
     return {
         quotes: state.quotes
     };
 };
-
 class Main extends Component {
     componentDidMount() {
         this.props.fetchQuotes();
+        console.log(this.props);
+        console.log(this.props.quotes);
     }
-
+    
     render() {
         const HomePage = () => {
             return (
-                <Home 
-                quote={this.props.quotes.quotes.filter(quote => quote)[0]}
-                quotesLoading={this.props.quotes.isLoading}
-                quotesErrMess={this.props.quotes.errMess}
-                />
+                <Home />
             )
         }
 
