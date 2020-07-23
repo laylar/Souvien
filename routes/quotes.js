@@ -1,13 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Quote = require('../models/quote');
+const cors = require('./cors');
 
 const quotesRouter = express.Router();
 
 quotesRouter.use(bodyParser.json());
 
 quotesRouter.route('/')
-    .get((req, res, next) => {
+    .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
+    .get(cors.cors, (req, res, next) => {
+    //.get((req, res, next) => {
         Quote.find()
         .then(quotes => {
             res.statusCode = 200;
@@ -16,7 +19,7 @@ quotesRouter.route('/')
         })
         .catch(err => next(err))
     })
-    .post((req, res, next) => {
+    .post(cors.corsWithOptions, (req, res, next) => {
         Quote.create(req.body)
         .then(quote => {
             console.log('Quote added: ', quote);
@@ -26,11 +29,11 @@ quotesRouter.route('/')
         })
         .catch(err => next(err));
     })
-    .put((req, res) => {
+    .put(cors.corsWithOptions, (req, res) => {
         res.statusCode = 403;
         res.end('PUT operation not supported on /quotes');
     })
-    .delete((req, res, ) => {
+    .delete(cors.corsWithOptions, (req, res, ) => {
         Quote.deleteMany()
         .then(response => {
             res.statusCode = 200;
@@ -41,7 +44,8 @@ quotesRouter.route('/')
     });
 
 quotesRouter.route('/:quoteId')
-    .get((req, res, next) => {
+    .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
+    .get(cors.cors, (req, res, next) => {
         Quote.findById(req.params.quoteId)
         .then(quote => {
             res.statusCode = 200;
@@ -50,11 +54,11 @@ quotesRouter.route('/:quoteId')
         })
         .catch(err => next(err));
     })
-    .post((req, res) => {
+    .post(cors.corsWithOptions, (req, res) => {
         res.statusCode = 403;
         res.end(`POST operation not supported on /quotes/${req.params.quoteId}`);
     })
-    .put((req, res, next) => {
+    .put(cors.corsWithOptions, (req, res, next) => {
         Quote.findByIdAndUpdate(req.params.quoteId, {
             $set: req.body
         }, {new: true})
@@ -65,7 +69,7 @@ quotesRouter.route('/:quoteId')
         })
         .catch(err => next(err));
     })
-    .delete((req, res) => {
+    .delete(cors.corsWithOptions, (req, res) => {
         res.statusCode = 403;
         res.end(`DELETE operation not supported on /quotes/${req.params.quoteId}`);
     });
