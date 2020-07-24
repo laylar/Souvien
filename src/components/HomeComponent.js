@@ -4,6 +4,7 @@ import { Card, CardTitle, CardText } from "reactstrap";
 import Quote from "./QuoteComponent";
 import NewEntryForm from "./NewEntryFormComponent";
 import DatePicker from "react-date-picker";
+import moment from "moment";
 
 class Home extends Component {
   state = {
@@ -21,12 +22,13 @@ class Home extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <Quote dateVal="Jan 01" />
+            <Quote
+              dateVal={moment(this.state.date.toString()).format("MMM DD")}
+            />
             <NewEntryForm />
             <div className="container">
               <br />
               <DatePicker onChange={this.onChange} value={this.state.date} />
-              <div>date is: {this.state.date.toString()}</div>
             </div>
           </div>
         </div>
