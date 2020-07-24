@@ -11,8 +11,6 @@ const mapStateToProps = (state) => ({
   quotes: state.quotes,
 });
 
-const dateVal = "2001-01-01T08:00:00.000Z";
-
 class Quote extends Component {
   componentDidMount() {
     this.props.fetchQuotes();
@@ -26,7 +24,7 @@ class Quote extends Component {
             <i>
               {
                 this.props.quotes.quotes.filter(
-                  (quote) => quote.date === dateVal
+                  (quote) => quote.date === this.props.dateVal
                 )[0].quote
               }
             </i>
@@ -35,7 +33,7 @@ class Quote extends Component {
             --
             {
               this.props.quotes.quotes.filter(
-                (quote) => quote.date === dateVal
+                (quote) => quote.date === this.props.dateVal
               )[0].author
             }
           </h5>
