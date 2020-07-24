@@ -7,7 +7,8 @@ export const Quotes = (state = { errMess: null, quotes: [] }, action) => {
             
         case ActionTypes.QUOTES_FAILED:
             return { ...state, errMess: action.payload };
-
+        case ActionTypes.ADD_QUOTES:
+            return { ...state, isLoading: false, errMess: null, quotes: action.payload }
         default:
             return state;
     }

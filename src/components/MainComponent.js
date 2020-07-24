@@ -1,41 +1,18 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchQuotes } from '../redux/ActionCreators';
+import { Switch, Route, Redirect} from 'react-router-dom';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 
-
-const mapDispatchToProps = {
-    fetchQuotes: () => (fetchQuotes())
-};
-const mapStateToProps = state => {
-    return {
-        quotes: state.quotes
-    };
-};
 class Main extends Component {
-    componentDidMount() {
-        this.props.fetchQuotes();
-        console.log(this.props);
-        console.log(this.props.quotes);
-    }
-    
     render() {
-        const HomePage = () => {
-            return (
-                <Home />
-            )
-        }
-
         return (
             <div>
                 <Header />
                 <Switch>
-                    <Route path='/home' component={HomePage} />
+                    <Route path='/home' component={Home} />
                     <Route path='/about' component={About} />
                     <Route path='/contact' component={Contact} />
                     <Redirect to='/home' />
@@ -47,4 +24,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default Main;

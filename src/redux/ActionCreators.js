@@ -6,8 +6,11 @@ export const fetchQuotes = () => dispatch => {
 
     return fetch(baseUrl + 'quotes')
         .then(response => response.json())
-        .then(quotes => dispatch(addQuotes(quotes)));
-};
+        .then(quotes => {
+            console.log(quotes);
+            dispatch(addQuotes(quotes))});
+        
+    };
 
 export const quotesLoading = () => ({
     type: ActionTypes.QUOTES_LOADING

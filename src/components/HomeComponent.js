@@ -4,7 +4,7 @@ import CurrDate from './CalendarComponent';
 import Quote from './QuoteComponent';
 import NewEntryForm from './NewEntryFormComponent';
 
-function Home (props) {
+function Home () {
     return (
         <div className="container">
             <div className="row">
