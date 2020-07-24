@@ -24,7 +24,7 @@ class Quote extends Component {
             <i>
               {
                 this.props.quotes.quotes.filter(
-                  (quote) => quote.date === this.props.dateVal
+                  (quote) => quote.day === this.props.dateVal
                 )[0].quote
               }
             </i>
@@ -33,7 +33,7 @@ class Quote extends Component {
             --
             {
               this.props.quotes.quotes.filter(
-                (quote) => quote.date === this.props.dateVal
+                (quote) => quote.day === this.props.dateVal
               )[0].author
             }
           </h5>

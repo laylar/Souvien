@@ -21,7 +21,7 @@ class Home extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <Quote dateVal="2001-01-01T08:00:00.000Z" />
+            <Quote dateVal="Jan 01" />
             <NewEntryForm />
             <div className="container">
               <br />
