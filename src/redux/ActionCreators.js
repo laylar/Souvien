@@ -68,10 +68,11 @@ export const addComment = (entry) => ({
   payload: entry,
 });
 
-export const addEntry = (entryId, day, year, text) => (dispatch) => {
+export const addEntry = (entryId, day, dayname, year, text) => (dispatch) => {
   const newEntry = {
     entry: entryId,
     day: day,
+    dayname: dayname,
     year: year,
     text: text,
   };

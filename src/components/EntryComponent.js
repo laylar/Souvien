@@ -17,12 +17,15 @@ function RenderEntries({ dayEntries }) {
     return (
       <React.Fragment>
         <div key={dayEntries.year}>
-          <h4>Previous Entries</h4>
+          <h4>Entries</h4>
           {dayEntries
             .map((entry) => (
               <div>
                 <Card>
-                  <CardTitle>{entry.year}</CardTitle>
+                  <CardTitle>
+                    <b>{entry.year} </b>
+                    {entry.dayname.substring(0, 3)}
+                  </CardTitle>
                   <CardText>{entry.text}</CardText>
                 </Card>
                 <br />
