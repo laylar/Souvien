@@ -18,15 +18,17 @@ function RenderEntries({ dayEntries }) {
       <React.Fragment>
         <div key={dayEntries.year}>
           <h4>Previous Entries</h4>
-          {dayEntries.map((entry) => (
-            <div>
-              <Card>
-                <CardTitle>{entry.year}</CardTitle>
-                <CardText>{entry.text}</CardText>
-              </Card>
-              <br />
-            </div>
-          ))}
+          {dayEntries
+            .map((entry) => (
+              <div>
+                <Card>
+                  <CardTitle>{entry.year}</CardTitle>
+                  <CardText>{entry.text}</CardText>
+                </Card>
+                <br />
+              </div>
+            ))
+            .reverse()}
         </div>
       </React.Fragment>
     );
