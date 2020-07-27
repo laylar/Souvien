@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchEntries } from "../redux/ActionCreators";
 import { Card, CardTitle, CardText } from "reactstrap";
+import moment from "moment";
 
 const mapDispatchToProps = {
   fetchEntries: () => fetchEntries(),
@@ -16,15 +17,16 @@ function RenderEntries({ dayEntries }) {
   if (dayEntries) {
     return (
       <React.Fragment>
-        <div key={dayEntries.year}>
+        <div key={dayEntries.id}>
           {dayEntries
             .map((entry) => (
               <div className="col-md-8 centered">
                 <Card>
                   <CardTitle>
                     <span className="year-text">
-                      {entry.year}
-                      {/* {entry.dayname.substring(0, 3)} */}
+                      {moment(entry.day.toString()).format("YYYY")}
+                      {"   "}
+                      {moment(entry.day.toString()).format("ddd")}
                     </span>
                   </CardTitle>
                   <div className="col-md-11 centered">
@@ -51,7 +53,9 @@ class Entry extends Component {
       return (
         <RenderEntries
           dayEntries={this.props.entries.entries.filter(
-            (entry) => entry.day == this.props.dateVal
+            (entry) =>
+              moment(entry.day.toString()).format("MMM DD") ===
+              this.props.dateVal
           )}
         />
       );
