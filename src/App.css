@@ -76,6 +76,10 @@ a:link {
   font-size: 25px;
 }
 
+.form-text {
+  font-family: "Montserrat", sans-serif;
+}
+
 .dropdown.open a:focus {
   background-color: #6dbcc9;
 }
