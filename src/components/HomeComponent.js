@@ -10,9 +10,15 @@ class Home extends Component {
   state = {
     date: new Date(),
   };
-
   onChange = (date) => this.setState({ date });
   render() {
+    let dateVal = new Date();
+    if (this.state.date > 0) {
+      dateVal = moment(this.state.date.toString()).format("MMM DD");
+    } else {
+      dateVal = moment(dateVal.toString()).format("MMM DD");
+    }
+
     return (
       <div className="container">
         <div className="row">
@@ -22,9 +28,7 @@ class Home extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <Quote
-              dateVal={moment(this.state.date.toString()).format("MMM DD")}
-            />
+            <Quote dateVal={dateVal} />
             <div className="container">
               <br />
               <DatePicker onChange={this.onChange} value={this.state.date} />
@@ -41,9 +45,7 @@ class Home extends Component {
             {/**When not logged in this page will show a login page.
                     The section above this will be stuck to the top. The entries below can scroll.
                     **/}
-            <Entry
-              dateVal={moment(this.state.date.toString()).format("MMM DD")}
-            />
+            <Entry dateVal={dateVal} />
           </div>
         </div>
       </div>
