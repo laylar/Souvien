@@ -22,8 +22,10 @@ function RenderEntries({ dayEntries }) {
               <div className="col-md-8 centered">
                 <Card>
                   <CardTitle>
-                    <b>{entry.year} </b>
-                    {entry.dayname.substring(0, 3)}
+                    <span className="year-text">
+                      {entry.year}
+                      {/* {entry.dayname.substring(0, 3)} */}
+                    </span>
                   </CardTitle>
                   <CardText>{entry.text}</CardText>
                 </Card>
