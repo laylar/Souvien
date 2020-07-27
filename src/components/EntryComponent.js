@@ -27,7 +27,9 @@ function RenderEntries({ dayEntries }) {
                       {/* {entry.dayname.substring(0, 3)} */}
                     </span>
                   </CardTitle>
-                  <CardText>{entry.text}</CardText>
+                  <div className="col-md-11 centered">
+                    <CardText>{entry.text}</CardText>
+                  </div>
                 </Card>
                 <br />
               </div>
