@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Sue+Ellen+Francisco&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Sue+Ellen+Francisco&display=swap");
 
 a {
-  color:black;
+  color: black;
 }
 
 a:hover {
@@ -17,7 +17,12 @@ a:link {
 }
 
 .navbar {
-  background-image: linear-gradient(to right, rgb(54, 54, 54), rgb(182, 182, 182), gray);
+  background-image: linear-gradient(
+    to right,
+    rgb(54, 54, 54),
+    rgb(182, 182, 182),
+    gray
+  );
   color: black;
 }
 
@@ -32,29 +37,43 @@ a:link {
 }
 
 .header-title {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   color: rgb(0, 0, 0);
 }
 
 .header-text {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   font-size: 60px;
 }
 
 .footer-text {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   font-size: 30px;
   color: black;
 }
 
 .title-text {
-  font-family: 'Sue Ellen Francisco', cursive;
+  font-family: "Sue Ellen Francisco", cursive;
   font-size: 30px;
 }
 
 .entry-text {
-  font-family: 'Montserrat', sans-serif;
-  
+  font-family: "Montserrat", sans-serif;
+}
+
+.quote-text {
+  font-family: "Sue Ellen Francisco", cursive;
+  font-size: 30px;
+  color: rgb(78, 78, 78);
+}
+
+.author-text {
+  font-family: "Montserrat", sans-serif;
+}
+
+.year-text {
+  font-family: "Sue Ellen Francisco", cursive;
+  font-size: 20px;
 }
 
 .dropdown.open a:focus {

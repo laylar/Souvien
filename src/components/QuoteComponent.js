@@ -20,7 +20,7 @@ class Quote extends Component {
     if (this.props.quotes.quotes.length > 0) {
       return (
         <div className="container">
-          <h4>
+          <div className="quote-text">
             <i>
               {
                 this.props.quotes.quotes.filter(
@@ -28,15 +28,15 @@ class Quote extends Component {
                 )[0].quote
               }
             </i>
-          </h4>
-          <h5>
+          </div>
+          <div className="author-text">
             --
             {
               this.props.quotes.quotes.filter(
                 (quote) => quote.day === this.props.dateVal
               )[0].author
             }
-          </h5>
+          </div>
         </div>
       );
     } else {
