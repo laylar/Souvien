@@ -25,16 +25,19 @@ class Home extends Component {
             <Quote
               dateVal={moment(this.state.date.toString()).format("MMM DD")}
             />
-            <NewEntryForm />
             <div className="container">
               <br />
               <DatePicker onChange={this.onChange} value={this.state.date} />
             </div>
           </div>
         </div>
+        <div className="row">
+          <div className="col">
+            <NewEntryForm />
+          </div>
+        </div>
         <div className="row row-content">
           <div className="col entry-text">
-            <br />
             {/**When not logged in this page will show a login page.
                     The section above this will be stuck to the top. The entries below can scroll.
                     **/}
