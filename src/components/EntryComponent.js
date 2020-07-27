@@ -17,10 +17,9 @@ function RenderEntries({ dayEntries }) {
     return (
       <React.Fragment>
         <div key={dayEntries.year}>
-          <h4>Entries</h4>
           {dayEntries
             .map((entry) => (
-              <div>
+              <div className="col-md-8 centered">
                 <Card>
                   <CardTitle>
                     <b>{entry.year} </b>
