@@ -7,14 +7,6 @@ const entrySchema = new Schema({
     type: String,
     required: true,
   },
-  year: {
-    type: String,
-    required: true,
-  },
-  dayname: {
-    type: String,
-    required: true,
-  },
   text: {
     type: String,
     required: true,

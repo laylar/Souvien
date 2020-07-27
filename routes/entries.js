@@ -18,17 +18,17 @@ entriesRouter
         res.json(entries);
       })
       .catch((err) => next(err));
-    //   })
-    //   .post(cors.corsWithOptions, (req, res, next) => {
-    //     Entry.create(req.body)
-    //       .then((entry) => {
-    //         console.log("Entry added: ", entry);
-    //         res.statusCode = 200;
-    //         res.setHeader("Content-Type", "application/json");
-    //         res.json(entry);
-    //       })
-    //       .catch((err) => next(err));
-    //   })
+  })
+  .post(cors.corsWithOptions, (req, res, next) => {
+    Entry.create(req.body)
+      .then((entry) => {
+        console.log("Entry added: ", entry);
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(entry);
+      })
+      .catch((err) => next(err));
+    //  })
     //   .put(cors.corsWithOptions, (req, res) => {
     //     res.statusCode = 403;
     //     res.end("PUT operation not supported on /entries");
