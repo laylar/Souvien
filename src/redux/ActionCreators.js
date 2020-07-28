@@ -68,24 +68,19 @@ export const addComment = (entry) => ({
   payload: entry,
 });
 
-export const addEntry = (entryId, day, text) => (dispatch) => {
+export const addEntry = (day, text) => (dispatch) => {
   const newEntry = {
-    entry: entryId,
     day: day,
     text: text,
   };
   console.log("Entry: ", newEntry);
-
-  //const bearer = "Bearer " + localStorage.getItem("token");
 
   return fetch(baseUrl + "entries", {
     method: "POST",
     body: JSON.stringify(newEntry),
     headers: {
       "Content-Type": "application/json",
-      //Authorization: bearer,
     },
-    //credentials: "same-origin",
   })
     .then(
       (response) => {

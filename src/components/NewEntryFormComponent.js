@@ -1,25 +1,74 @@
-import React from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { addEntry } from "../redux/ActionCreators";
+import { fetchEntries } from "../redux/ActionCreators";
+import { Form, FormGroup, Button, Col, Input } from "reactstrap";
 
-function NewEntryForm() {
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-8 centered form-text">
-          <Form>
-            <FormGroup>
-              <Input
-                type="textarea"
-                name="newentry"
-                id="entry-data"
-                placeholder="What would you like to remember about today?"
-              />
-            </FormGroup>
-          </Form>
-        </div>
-      </div>
-    </div>
-  );
+const mapDispatchToProps = {
+  addEntry: (day, text) => addEntry(day, text),
+  fetchEntries: () => fetchEntries(),
+};
+
+const mapStateToProps = (state) => ({
+  entries: state.entries,
+});
+
+class NewEntryForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "",
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({ [name]: value });
+    console.log({ [name]: value });
+  }
+
+  handleSubmit(event) {
+    alert("New entry is: " + this.props.dateLong + ": " + this.state.text);
+    this.props.addEntry(this.props.dateLong, this.state.text);
+    this.props.fetchEntries();
+    event.preventDefault();
+  }
+
+  render() {
+    console.log(this.props.dateLong);
+    return (
+      <Form onSubmit={this.handleSubmit}>
+        <FormGroup row>
+          <Col md={8} className="centered form-text">
+            <Input
+              type="textarea"
+              id="text"
+              name="text"
+              value={this.state.text}
+              placeholder={`What would you like to remember about ${this.props.dateLong}?`}
+              rows="4"
+              onChange={this.handleInputChange}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Col>
+            <Button type="submit" value="submit">
+              Submit
+            </Button>
+          </Col>
+        </FormGroup>
+      </Form>
+    );
+  }
 }
 
-export default NewEntryForm;
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(NewEntryForm)
+);
