@@ -40,6 +40,8 @@ redux-thunk
 <dd>This let me do all those wonderful .then bits!</dd>
 
 <dt>Other Libraries</dt>
+react-text-transition
+<dd>I was really excited to see my header come to life with this text animation.</dd>
 react-date-picker
 <dd>A ready made date selection tool!</dd>
 moment.js
@@ -58,6 +60,24 @@ Postman
 <dd>Like a cool browser that has all the server requests at its disposal, I also discovered that we can find out how many people are in space at any given moment (and who they are) by making a GET request to [this API by Open Notify](http://open-notify.org/Open-Notify-API/People-In-Space/)!</dd>
 </dl>
 
+_________________________
+# Next Steps
+_________________________
+
+*As of 7/28/2020*: There will always be more to do. I have a list of features I'd like to add, and of course, there are still a few bugs to work out. You can check out the Issues tab, but here are some of the features I'm hoping to work in next:
+   * User accounts with OAuth through Passport 
+	    * Then I could finally push it to production!
+   * Edit entries
+	 * Upload bulk entries
+   * Add comments/reflections to entries
+   * Add entries via speech to text
+   * Listen to entries via text to speech (or hear previous recordings)
+   * Add a picture for each day
+	 * Select from different themes of daily quotes
+	 * Upload a custom selection of quotes
+	 * Opt-in to a streak display
+	 * ...?
+   
 _________________________
 # Thanks to my support team
 _________________________
