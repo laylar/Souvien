@@ -102,6 +102,6 @@ export const addEntry = (day, text) => (dispatch) => {
     .then((response) => dispatch(addEntry(response)))
     .catch((error) => {
       console.log("post entry", error.message);
-      alert("Your entry could not be posted\nError: " + error.message);
+      // alert("Your entry could not be posted\nError: " + error.message);
     });
 };

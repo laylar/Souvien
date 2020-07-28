@@ -30,11 +30,9 @@ class NewEntryForm extends Component {
     const value = target.value;
 
     this.setState({ [name]: value });
-    console.log({ [name]: value });
   }
 
   handleSubmit(event) {
-    alert("New entry is: " + this.props.dateLong + ": " + this.state.text);
     this.props.addEntry(this.props.dateLong, this.state.text);
     this.props.fetchEntries();
     event.preventDefault();
