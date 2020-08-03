@@ -81,6 +81,6 @@ _________________________
 _________________________
 # Thanks to my support team
 _________________________
-I couldn't have made it this far without my instructors at Nucamp. Rucha Nimbalkar was my first, and launched me with Bootstrap. Caleb Braaten was my second with React, and made a reappearance with Node/Express/Mongo! DeVonta Johnson was my React Native instructor who pushed me through the trench of fatigue from the firehose that bootcamps tend to be, reinvigorated my passion for coding just in time to get started on this project again.
+I couldn't have made it this far without my instructors at Nucamp. Rucha Nimbalkar was my first, and launched me with Bootstrap. Caleb Braaten was my second with React, and made a reappearance with Node/Express/Mongo, having so much patience for all my questions and attempts at humor! DeVonta Johnson was my React Native instructor who pushed me through the trench of fatigue from the firehose that bootcamps tend to be, reinvigorated my passion for coding just in time to get started on this project again.
 
-In addition, I want to thank all the instructors who never had me as their students directly, but helped me anyway, as well as my peers who were working through their own bugs at the same time. I am so grateful for the community that Nucamp has invited me into, and I look forward to being that support person for future cohorts, too!
+In addition, I want to thank all the instructors who never had me as their students directly, but helped me anyway, as well as my peers who were working through their own bugs at the same time. I am so grateful for the community that Nucamp has offered, and I look forward to being that support person for future cohorts, too!
