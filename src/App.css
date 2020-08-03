@@ -80,6 +80,11 @@ a:link {
   font-family: "Montserrat", sans-serif;
 }
 
+.submit-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+}
+
 .dropdown.open a:focus {
   background-color: #6dbcc9;
 }

@@ -32,14 +32,12 @@ class NewEntryForm extends Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit(event) {
+  handleSubmit() {
     this.props.addEntry(this.props.dateLong, this.state.text);
     this.props.fetchEntries();
-    event.preventDefault();
   }
 
   render() {
-    console.log(this.props.dateLong);
     return (
       <Form onSubmit={this.handleSubmit}>
         <FormGroup row>
@@ -52,14 +50,15 @@ class NewEntryForm extends Component {
               placeholder={`What would you like to remember about ${this.props.dateLong}?`}
               rows="4"
               onChange={this.handleInputChange}
+              maxLength="1000"
+              onKeyPress={(event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  this.handleSubmit();
+                  this.setState({ text: "" });
+                }
+              }}
             />
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Col>
-            <Button type="submit" value="submit">
-              Submit
-            </Button>
           </Col>
         </FormGroup>
       </Form>
