@@ -28,11 +28,15 @@ entriesRouter
         res.json(entry);
       })
       .catch((err) => next(err));
-    //  })
-    //   .put(cors.corsWithOptions, (req, res) => {
-    //     res.statusCode = 403;
-    //     res.end("PUT operation not supported on /entries");
-    //   })
+  })
+  .put(cors.corsWithOptions, (req, res) => {
+    res.statusCode = 403;
+    res.end("PUT operation not supported on /entries");
+    // })
+
+    //delete shouldn't be possible... yet. Users can eventually
+    // delete account and with it all their entries.
+
     //   .delete(cors.corsWithOptions, (req, res) => {
     //     Entry.deleteMany()
     //       .then((response) => {
@@ -54,29 +58,29 @@ entriesRouter
         res.json(entry);
       })
       .catch((err) => next(err));
-    //   })
-    //   .post(cors.corsWithOptions, (req, res) => {
-    //     res.statusCode = 403;
-    //     res.end(`POST operation not supported on /entries/${req.params.entryId}`);
-    //   })
-    //   .put(cors.corsWithOptions, (req, res, next) => {
-    //     Entry.findByIdAndUpdate(
-    //       req.params.entryId,
-    //       {
-    //         $set: req.body,
-    //       },
-    //       { new: true }
-    //     )
-    //       .then((response) => {
-    //         res.statusCode = 200;
-    //         res.setHeader("Content-Type", "application/json");
-    //         res.json(response);
-    //       })
-    //       .catch((err) => next(err));
-    //   })
-    //   .delete(cors.corsWithOptions, (req, res) => {
-    //     res.statusCode = 403;
-    //     res.end(`DELETE operation not supported on /entries/${req.params.entryId}`);
+  })
+  .post(cors.corsWithOptions, (req, res) => {
+    res.statusCode = 403;
+    res.end(`POST operation not supported on /entries/${req.params.entryId}`);
+  })
+  .put(cors.corsWithOptions, (req, res, next) => {
+    Entry.findByIdAndUpdate(
+      req.params.entryId,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    )
+      .then((response) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(response);
+      })
+      .catch((err) => next(err));
+  })
+  .delete(cors.corsWithOptions, (req, res) => {
+    res.statusCode = 403;
+    res.end(`DELETE operation not supported on /entries/${req.params.entryId}`);
   });
 
 module.exports = entriesRouter;
