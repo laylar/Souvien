@@ -32,6 +32,11 @@ function RenderEntries({ dayEntries }) {
                   <div className="col-md-11 centered">
                     <CardText>{entry.text}</CardText>
                   </div>
+                  <p>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    {"  "}
+                    <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  </p>
                 </Card>
                 <br />
               </div>
@@ -61,6 +66,7 @@ class Entry extends Component {
       );
     } else {
       return (
+        // this could return data rendered with RenderEntries from a .json file stored in public folder
         <React.Fragment>
           <Card>
             <CardTitle tag="h5">July 19th, 2019</CardTitle>

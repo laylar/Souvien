@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { fetchEntries } from "../redux/ActionCreators";
 import Quote from "./QuoteComponent";
 import Entry from "./EntryComponent";
-import NewEntryForm from "./NewEntryFormComponent";
+// import NewEntryForm from "./NewEntryFormComponent";
 import DatePicker from "react-date-picker";
 import moment from "moment";
 
@@ -54,17 +54,18 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* The new entries will be made by editing the prepopulated dummy entry for that day. */}
+        {/* <div className="row">
           <div className="col">
             <NewEntryForm dateLong={dateLong} />
           </div>
-        </div>
+        </div> */}
         <div className="row row-content">
           <div className="col entry-text">
             {/**When not logged in this page will show a login page.
                     The section above this will be stuck to the top. The entries below can scroll.
                     **/}
-            <Entry dateVal={dateVal} />
+            <Entry dateVal={dateVal} dateLong={dateLong} />
           </div>
         </div>
       </div>

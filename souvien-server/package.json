@@ -1,49 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "clevername-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "bootstrap": "^4.5.0",
-    "moment": "^2.27.0",
-    "react": "^16.13.1",
-    "react-calendar": "^3.1.0",
-    "react-date-picker": "^8.0.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-redux-form": "^1.16.14",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "3.4.1",
-    "react-text-transition": "^1.1.1",
-    "reactstrap": "^8.5.1",
-    "redux": "^4.0.5",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-=======
   "name": "souvien-server",
   "version": "0.0.0",
   "private": true,
@@ -59,6 +14,5 @@
     "jade": "~1.11.0",
     "mongoose": "^5.8.7",
     "morgan": "~1.9.1"
->>>>>>> remotes/souvien-server/master
   }
 }
