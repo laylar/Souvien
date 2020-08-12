@@ -33,8 +33,12 @@ function RenderEntries({ dayEntries }) {
                     <CardText>{entry.text}</CardText>
                   </div>
                   <p>
+                    {/* toggles edit entry -- will be EditEntryToggle component */}
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     {"  "}
+                    {/* toggles entry comments and a new comment box, 
+                    which appear below entry and slightly askew 
+                     -- will be CommentEntryToggle component*/}
                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
                   </p>
                 </Card>
