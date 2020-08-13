@@ -18,7 +18,7 @@ class EditEntryToggle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "",
+      text: this.props.entryText,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,7 +49,6 @@ class EditEntryToggle extends Component {
               name="text"
               value={this.state.text}
               //   instead of placeholder it should be starting text
-              placeholder={`What would you like to remember about ${this.props.dateLong}?`}
               rows="4"
               onChange={this.handleInputChange}
               maxLength="1000"

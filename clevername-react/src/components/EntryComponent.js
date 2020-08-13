@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchEntries } from "../redux/ActionCreators";
 import { Card, CardTitle, CardText } from "reactstrap";
+import EditEntryToggle from "./EditEntryToggle";
 import moment from "moment";
 
 const mapDispatchToProps = {
@@ -41,6 +42,7 @@ function RenderEntries({ dayEntries }) {
                      -- will be CommentEntryToggle component*/}
                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
                   </p>
+                  <EditEntryToggle entryText={entry.text} />
                 </Card>
                 <br />
               </div>
