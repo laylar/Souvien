@@ -12,8 +12,9 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => ({
   entries: state.entries,
-  demoEntries: ENTRIES,
 });
+
+const demoEntries = ENTRIES;
 
 function RenderEntries({ dayEntries }) {
   if (dayEntries) {
@@ -69,11 +70,12 @@ class Entry extends Component {
     } else {
       return (
         <RenderEntries
-          dayEntries={this.props.demoEntries.filter(
-            (entry) =>
+          dayEntries={demoEntries.filter((entry) => {
+            return (
               moment(entry.day.toString()).format("MMM DD") ===
               this.props.dateVal
-          )}
+            );
+          })}
         />
       );
     }
