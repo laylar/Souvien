@@ -63,12 +63,13 @@ a:link {
 
 .quote-text {
   font-family: "Sue Ellen Francisco", cursive;
-  font-size: 30px;
+  font-size: 25px;
   color: rgb(78, 78, 78);
 }
 
 .author-text {
   font-family: "Montserrat", sans-serif;
+  padding: 7px;
 }
 
 .year-text {
@@ -91,6 +92,5 @@ a:link {
 
 .centered {
   margin: auto;
-  width: 50%;
   padding: 10px;
 }

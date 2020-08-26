@@ -24,13 +24,11 @@ class Quote extends Component {
       return (
         <div className="container">
           <div className="quote-text">
-            <i>
-              {
-                this.props.quotes.quotes.filter(
-                  (quote) => quote.day === this.props.dateVal
-                )[0].quote
-              }
-            </i>
+            {
+              this.props.quotes.quotes.filter(
+                (quote) => quote.day === this.props.dateVal
+              )[0].quote
+            }
           </div>
           <div className="author-text">
             --
@@ -46,13 +44,10 @@ class Quote extends Component {
       return (
         <div className="container">
           <div className="quote-text">
-            <i>
-              {
-                demoQuotes.filter(
-                  (quote) => quote.day === this.props.dateVal
-                )[0].quote
-              }
-            </i>
+            {
+              demoQuotes.filter((quote) => quote.day === this.props.dateVal)[0]
+                .quote
+            }
           </div>
           <div className="author-text">
             --
@@ -66,9 +61,7 @@ class Quote extends Component {
     } else {
       return (
         <div className="container">
-          <h4>
-            <i>In order to write about life first you must live it.</i>
-          </h4>
+          <h4>In order to write about life first you must live it.</h4>
           <h5>- Ernest Hemingway</h5>
         </div>
       );
