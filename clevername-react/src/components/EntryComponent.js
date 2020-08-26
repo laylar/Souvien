@@ -5,6 +5,7 @@ import { fetchEntries } from "../redux/ActionCreators";
 import { Card, CardTitle, CardText } from "reactstrap";
 import EditEntryToggle from "./EditEntryToggle";
 import moment from "moment";
+import { ENTRIES } from "../shared/entries";
 
 const mapDispatchToProps = {
   fetchEntries: () => fetchEntries(),
@@ -13,6 +14,8 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => ({
   entries: state.entries,
 });
+
+const demoEntries = ENTRIES;
 
 function RenderEntries({ dayEntries }) {
   if (dayEntries) {
@@ -72,32 +75,14 @@ class Entry extends Component {
       );
     } else {
       return (
-        // this could return data rendered with RenderEntries from a .json file stored in public folder
-        <React.Fragment>
-          <Card>
-            <CardTitle tag="h5">July 19th, 2019</CardTitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </CardText>
-          </Card>
-          <br />
-          <Card>
-            <CardTitle tag="h5">July 19th, 2018</CardTitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </CardText>
-          </Card>
-          <br />
-          <Card>
-            <CardTitle tag="h5">July 19th, 2017</CardTitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </CardText>
-          </Card>
-        </React.Fragment>
+        <RenderEntries
+          dayEntries={demoEntries.filter((entry) => {
+            return (
+              moment(entry.day.toString()).format("MMM DD") ===
+              this.props.dateVal
+            );
+          })}
+        />
       );
     }
   }
