@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchQuotes } from "../redux/ActionCreators";
+import { QUOTES } from "../shared/quotes";
 
 const mapDispatchToProps = {
   fetchQuotes: () => fetchQuotes(),
@@ -10,6 +11,8 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => ({
   quotes: state.quotes,
 });
+
+const demoQuotes = QUOTES;
 
 class Quote extends Component {
   componentDidMount() {
@@ -35,6 +38,27 @@ class Quote extends Component {
               this.props.quotes.quotes.filter(
                 (quote) => quote.day === this.props.dateVal
               )[0].author
+            }
+          </div>
+        </div>
+      );
+    } else if (demoQuotes) {
+      return (
+        <div className="container">
+          <div className="quote-text">
+            <i>
+              {
+                demoQuotes.filter(
+                  (quote) => quote.day === this.props.dateVal
+                )[0].quote
+              }
+            </i>
+          </div>
+          <div className="author-text">
+            --
+            {
+              demoQuotes.filter((quote) => quote.day === this.props.dateVal)[0]
+                .author
             }
           </div>
         </div>
