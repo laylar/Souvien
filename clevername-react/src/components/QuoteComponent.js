@@ -56,6 +56,15 @@ class Quote extends Component {
                 .author
             }
           </div>
+          <p className="disclaimer-text">
+            This is a work in progress that is not yet fully interactive. <br />
+            You can select different dates to display other quotes and entry
+            data. <br /> If you'd like to reach out or check out the code, you
+            can find this project at: <br />
+            <a href="https://github.com/laylar/Souvien/tree/demo">
+              https://github.com/laylar/Souvien/tree/demo
+            </a>
+          </p>
         </div>
       );
     } else {

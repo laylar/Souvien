@@ -86,6 +86,10 @@ a:link {
   font-size: 10px;
 }
 
+.disclaimer-text {
+  color: #5db979;
+}
+
 .dropdown.open a:focus {
   background-color: #6dbcc9;
 }
