@@ -6,6 +6,8 @@ Submitted by Layla Rowen as part of the requirements for graduating with honors 
 
 [The Express API](https://github.com/laylar/souvien-server). And the [React app](https://github.com/laylar/clevername-react).
 
+An early demo site is hosted on Netlify here: [https://souvien.netlify.app/](https://souvien.netlify.app/home)
+
 ---
 
 # Project Overview
