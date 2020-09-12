@@ -38,7 +38,7 @@ function RenderEntries({ dayEntries }) {
                   </div>
                   <p>
                     {/* toggles edit entry -- will be EditEntryToggle component */}
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                     {"  "}
                     {/* toggles entry comments and a new comment box, 
                     which appear below entry and slightly askew 
