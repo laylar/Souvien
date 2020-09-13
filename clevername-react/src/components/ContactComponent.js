@@ -1,29 +1,82 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Contact extends Component {
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <hr />
-                    </div>
-                </div>
-                <div className="row row-content">
-                    <div className="col">
-                        <div className="title-text">Contact</div>
-                        <div className="entry-text">
-                            <p><i>Have some ideas, comments, thoughts?</i></p>
-                            <p>Feel free to reach out!</p>
-                            <p>Lorem ipsum there will be a form here soon but I've got to take up a bunch of space here so the page looks a little fuller....</p>
-                        </div>
-                        <button>This is where the submit button will go!</button>
-                    </div>
-                </div>
-
-            </div>
-        );
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: "",
+      subject: "An email from the Souvien Website",
+      message: "",
+      mailSent: false,
+      error: null,
     };
+  }
+
+  handleFormSubmit(event) {
+    event.preventDefault();
+
+    console.log(this.state);
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <form action="#">
+          <div className="row row-content">
+            <div className="col">
+              <br />
+              <div className="title-text">Contact</div>
+              <hr />
+              <p>
+                Please let me know if you have any questions, comments,
+                thoughts, ideas, or just want to connect!
+              </p>
+              <div className="entry-text centered">
+                <label hidden={true}>Your Name</label>
+                <input
+                  value={this.state.name}
+                  onChange={(e) => this.setState({ name: e.target.value })}
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                />
+
+                <label hidden={true}>Email</label>
+                <input
+                  value={this.state.email}
+                  onChange={(e) => this.setState({ email: e.target.value })}
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email"
+                />
+
+                <label hidden={true}>Message</label>
+                <textarea
+                  value={this.state.message}
+                  onChange={(e) => this.setState({ message: e.target.value })}
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about it..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div className="row row-content">
+            <div className="col">
+              <input
+                type="submit"
+                onClick={(e) => this.handleFormSubmit(e)}
+                value="Submit"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default Contact;
