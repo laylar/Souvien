@@ -6,17 +6,41 @@ class Contact extends Component {
     this.state = {
       name: "",
       email: "",
-      subject: "An email from the Souvien Website",
       message: "",
-      mailSent: false,
-      error: null,
     };
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleFormSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
+    const templateId = "template_0bz0pu8";
 
-    console.log(this.state);
+    this.sendMessage(templateId, {
+      message: this.state.message,
+      from_name: this.state.name,
+      reply_to: this.state.email,
+    });
+  }
+
+  sendMessage(templateId, variables) {
+    window.emailjs
+      .send("Souvien_Gmail_Layla", templateId, variables)
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert(
+          "Thanks for your message! I look forward to reading it and getting back to you!"
+        );
+        this.setState({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        console.error(
+          "Hmm... that didn't seem to go through. Check it out: ",
+          err
+        );
+        alert(
+          "Hmm... that didn't go through. Please try again. If it keeps not working, feel free to email me at laylaccounts@icloud.com"
+        );
+      });
   }
 
   render() {
@@ -68,7 +92,7 @@ class Contact extends Component {
             <div className="col">
               <input
                 type="submit"
-                onClick={(e) => this.handleFormSubmit(e)}
+                onClick={(e) => this.handleSubmit(e)}
                 value="Submit"
               />
             </div>
