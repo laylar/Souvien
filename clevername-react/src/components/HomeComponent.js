@@ -39,7 +39,7 @@ class Home extends Component {
     }
 
     return (
-      <div className="container">
+      <React.Fragment>
         <div className="row">
           <div className="col">
             <hr />
@@ -62,7 +62,7 @@ class Home extends Component {
             <Entry dateVal={dateVal} dateLong={dateLong} />
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
