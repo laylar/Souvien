@@ -39,7 +39,7 @@ class Home extends Component {
     }
 
     return (
-      <div className="container">
+      <React.Fragment>
         <div className="row">
           <div className="col">
             <hr />
@@ -54,12 +54,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        {/* The new entries will be made by editing the prepopulated dummy entry for that day. */}
-        {/* <div className="row">
-          <div className="col">
-            <NewEntryForm dateLong={dateLong} />
-          </div>
-        </div> */}
         <div className="row row-content">
           <div className="col entry-text">
             {/**When not logged in this page will show a login page.
@@ -68,7 +62,7 @@ class Home extends Component {
             <Entry dateVal={dateVal} dateLong={dateLong} />
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

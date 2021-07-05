@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchEntries } from "../redux/ActionCreators";
 import { Card, CardTitle, CardText } from "reactstrap";
+import EditEntryToggle from "./EditEntryToggle";
 import moment from "moment";
 import { ENTRIES } from "../shared/entries";
 
@@ -36,10 +37,15 @@ function RenderEntries({ dayEntries }) {
                     <CardText>{entry.text}</CardText>
                   </div>
                   <p>
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    {/* toggles edit entry -- will be EditEntryToggle component */}
+                    <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                     {"  "}
+                    {/* toggles entry comments and a new comment box, 
+                    which appear below entry and slightly askew 
+                     -- will be CommentEntryToggle component*/}
                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
                   </p>
+                  <EditEntryToggle entryText={entry.text} />
                 </Card>
                 <br />
               </div>
